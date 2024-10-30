@@ -37,7 +37,7 @@ const  Footer = async({logo, description, bussiness}: FooterInterface) => {
                         <ul>
                             {
                                 data?.map(category => (
-                                    <li className='text-[0.9rem] leading-none'>
+                                    <li key={category.name} className='text-[0.9rem] leading-none'>
                                           <Link href={"/services"}>{category.name}</Link>
                                     </li>
                                 ))
