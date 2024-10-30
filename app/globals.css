@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --color-primary: #1FC188;
+  --color-black-1: #000;
+  --color-black-200: #6b5757;
+  --color-black-300: #5f5252;
+  --color-white-1: #fff;
+  --color-white-200:  #fdfdfd;
+
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+ 
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+
+/* Estilos personalizados */
+.container-custon{
+  @apply relative w-full mx-auto;
+}
+
+.item-menu {
+  @apply relative cursor-pointer font-bold text-[16px];
+
+  &::after {
+    content: '';
+    @apply absolute left-0 bottom-0 h-[3px] w-0 bg-colorPrimary transition-all duration-300;
+  }
+
+  &:hover::after {
+    @apply w-full;
+  }
+}
+
+.card-float {
+  @apply transition-transform duration-300 ease-in-out transform hover:translate-y-[-10px] hover:shadow-[0_10px_30px_rgba(0,0,0,0.2)];
+}
