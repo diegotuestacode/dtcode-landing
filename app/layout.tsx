@@ -24,7 +24,7 @@ export default async function RootLayout({
 }>) {
 
   const {data: dataGlobal} = await getDataGlobal() ?? [];
-  const {logo, bussiness, email, description} = dataGlobal[0] ?? {};
+  const {logo, bussiness, description} = dataGlobal[0] ?? {};
   const {data} = await getMenu() ?? [];
 
   const {STRAPI_HOST} = process.env; 

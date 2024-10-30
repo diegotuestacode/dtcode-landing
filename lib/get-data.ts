@@ -57,9 +57,9 @@ export async function getSolutions(){
 export async function getPage(namePage:string='', onlyHeroHeader:boolean = false){
     const dataPage = await getDataPage(namePage)
     const dataContentHero = await getDataContentHero(namePage)
-    let dataListPage: any = {}
-    let dataCategories: any = {}
-    let dataSolutions: any = {}
+    let dataListPage
+    let dataCategories
+    let dataSolutions
     if(!onlyHeroHeader){
         dataListPage = await getDataListPage(namePage)
         dataCategories = await getCategories(true);

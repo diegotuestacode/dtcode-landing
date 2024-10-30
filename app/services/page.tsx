@@ -1,17 +1,13 @@
-import CardContent from "@/components/shared/content/card-content";
 import CardContentServices from "@/components/shared/content/card-content-services";
-import CardServices from "@/components/shared/content/card-services";
 import HeroHeader from "@/components/shared/content/heroHeader";
 import {
   CardServiceInterface,
-  CardSolutionsInterface,
-  ItemListInterface,
 } from "@/interfaces/data.interface";
 import { getPage } from "@/lib/get-data";
 import { Suspense } from "react";
 
 export default async function Services() {
-  const { dataContentHero, dataCategories, dataSolutions } = await getPage(
+  const { dataContentHero, dataCategories } = await getPage(
     "services"
   );
 
@@ -19,9 +15,6 @@ export default async function Services() {
 
   const { data: dataCategories1 }: { data: CardServiceInterface[] } =
     dataCategories;
-
-  const { data: dataSolutions1 }: { data: CardSolutionsInterface[] } =
-    dataSolutions;
 
   const { STRAPI_HOST } = process.env;
 

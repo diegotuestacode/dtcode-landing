@@ -6,7 +6,7 @@ import { Suspense } from "react";
 
 import Buttons from '@/components/shared/content/buttons'
 import FormContact from "@/components/contact/form.contact";
-import { onSendEmail } from "@/actions/contact.action";
+
 
 
 

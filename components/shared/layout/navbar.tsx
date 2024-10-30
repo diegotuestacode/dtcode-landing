@@ -37,7 +37,6 @@ const Navbar = ({data, logo}: MenuInterface) => {
         };
     }, []); 
 
-    const LOGO = '/assets/images/Logo-png.png'
 
     return (
         <header className={`h-[90px] z-50 bg-white ${bgColor} shadow-[0px_1px_5px_rgba(135,127,127,0.25)] top-0 left-0  right-0 fixed transition-colors duration-500`}>
@@ -49,9 +48,9 @@ const Navbar = ({data, logo}: MenuInterface) => {
                     {
                         data?.sort((a,b) => a.orden - b.orden ).map(itemMenu => {
                             if (!itemMenu.cta) {
-                              return  <li key={itemMenu.slug} className="item-menu hidden md:block"><Link  href={`${itemMenu.slug}`}>{itemMenu.name}</Link></li>
+                              return  <li key={itemMenu.slug+itemMenu.name} className="item-menu hidden md:block"><Link  href={`${itemMenu.slug}`}>{itemMenu.name}</Link></li>
                             }else{
-                                return <li key={itemMenu.slug}><Link  href={`${itemMenu.slug}`} ><Buttons text={itemMenu.name} typeBtn="flat" classNa='hidden md:block' /></Link></li>
+                                return <li key={itemMenu.slug+itemMenu.name}><Link  href={`${itemMenu.slug}`} ><Buttons text={itemMenu.name} typeBtn="flat" classNa='hidden md:block' /></Link></li>
                                 
                             }
                         } )

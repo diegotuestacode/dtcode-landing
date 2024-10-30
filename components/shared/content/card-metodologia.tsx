@@ -8,7 +8,7 @@ interface CardMetodologiaInterface {
     onClick?:(e:React.MouseEvent<HTMLButtonElement>) => void
 }
 
-const CardMetodologia = ({cta = false,data, labelBtn = '', onClick = (e) => {}}: CardMetodologiaInterface) => {
+const CardMetodologia = ({cta = false,data, labelBtn = '', onClick = () => {}}: CardMetodologiaInterface) => {
 
     return (
         <article className="max-w-[400px] bg-white h-[400px] pt-[55px] pb-[40px] px-[45px]  shadow-[1px_1px_20px_rgba(135,127,127,0.25)]  flex flex-col gap-2 card-float  ">
