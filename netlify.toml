@@ -1,0 +1,6 @@
+[build]
+  command = "npm run build"
+  publish = ".next"  # Publica el directorio .next para SSR
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
