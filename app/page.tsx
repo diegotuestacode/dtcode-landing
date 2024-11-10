@@ -94,7 +94,7 @@ export default async function Home() {
                   w: 25,
                   h: 25,
                 }}
-                text={item.description}
+                text={item?.description}
               />
             ))}
           </div>

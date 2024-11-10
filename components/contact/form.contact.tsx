@@ -12,14 +12,19 @@ const FormContact = () => {
     setPending(true); // Establece pending en true antes de enviar
 
     const formData = new FormData(formRef.current!); // Obtiene los datos del formulario
-    const result = await onSendEmail(formData); // Envía el correo
-    setPending(false); // Establece pending en false después de recibir la respuesta
-
-    if (result.ok) {
-      alert("¡Correo enviado con éxito!"); // Mensaje de éxito
-      formRef.current?.reset(); // Limpia el formulario
-    } else {
-      alert("Hubo un error al enviar el correo."); // Mensaje de error
+    try {
+        
+        const result = await onSendEmail(formData); // Envía el correo
+        setPending(false); // Establece pending en false después de recibir la respuesta
+    
+        if (result.ok) {
+          alert("¡Correo enviado con éxito!"); // Mensaje de éxito
+          formRef.current?.reset(); // Limpia el formulario
+        } else {
+          alert("Hubo un error al enviar el correo."); // Mensaje de error
+        }
+    } catch (error) {
+        console.error({"error":"form-contact", "errorText": error})
     }
   };
 

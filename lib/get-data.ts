@@ -10,7 +10,7 @@ export async function getDataGlobal(){
 
 export async function getMenu(){
     const menu = await query('menus?fields[0]=name&fields[1]=slug&fields[2]=cta&fields[3]=orden');
-    console.log("menu: ", menu)
+    // console.log("menu: ", menu)
     return menu;
 }
 
@@ -21,18 +21,18 @@ export async function getMenu(){
 
  async function getDataContentHero(namePage:string){
     const result = await query(`content-hero-headers?filters[page][name][$contains]=${namePage}&fields[0]=titulo&fields[1]=description&fields[2]=cta&fields[3]=labelcta&populate[image][fields][0]=url`);
-    console.log("contentHero: ", result.data[0].image)
+    // console.log("contentHero: ", result.data[0].image)
     return result;
 }
 
  async function getDataListPage(namePage:string){
-    const result = await query(`category-listas?filters[page][name][$contains]=${namePage}&fields[0]=description`);
-
+    const result = await query(`lists?filters[page][name][$contains]=${namePage}&fields[0]=description`);
+    // console.log("getdata: ", result)
     return result;
 }
 
 export async function getDataListCategory(nameCategory:string){
-    const result = await query(`category-listas?filters[category][name][$contains]=${nameCategory}&fields[0]=description`);
+    const result = await query(`lists?filters[category][name][$contains]=${nameCategory}&fields[0]=description`);
 
     return result;
 }
@@ -65,7 +65,7 @@ export async function getPage(namePage:string='', onlyHeroHeader:boolean = false
         dataCategories = await getCategories(true);
         dataSolutions = await getSolutions();
     }
-    console.log("aa: ", dataPage)
+    // console.log("aa: ", dataPage)
     return {
         dataCategories,
         dataPage,

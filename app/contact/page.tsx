@@ -27,9 +27,9 @@ export default async function Contact() {
         <HeroHeader data={dataContentHero1[0]} host={STRAPI_HOST || ""} />
         <div className="pt-16 pb-20 container flex flex-col  gap-5 items-center mx-auto">
           <h2 className="text-colorPrimary text-[2rem] leading-none font-medium">
-            {dataPage1[0].title1}
+            {dataPage1[0]?.title1}
           </h2>
-          <p className="text-colorBlack2">{dataPage1[0].description1}</p>
+          <p className="text-colorBlack2">{dataPage1[0]?.description1}</p>
           <Link href="">
             <Buttons
               typeBtn="outlineFlat"
@@ -41,8 +41,8 @@ export default async function Contact() {
         <CardContent>
           <div className="flex flex-col container gap-5">
             <div className="flex flex-col items-center">
-              <h2 className="text-[3rem] text-white font-semibold leading-none">{dataPage1[0].title2}</h2>
-              <p className="text-white leading-none font-medium">{dataPage1[0].description2}</p>
+              <h2 className="text-[3rem] text-white font-semibold leading-none">{dataPage1[0]?.title2}</h2>
+              <p className="text-white leading-none font-medium">{dataPage1[0]?.description2}</p>
             </div>
             <div style={
                 { 
