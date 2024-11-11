@@ -10,8 +10,9 @@ interface ContentInterface{
 
 const CardContentServices = async({data, host, index}: ContentInterface) => {
 
-    const dataListPage = await getDataListCategory(data?.name.toLocaleLowerCase().split(" ")[0]);
+    const dataListPage = await getDataListCategory(data?.name);
     const { data: dataListPage1 }: { data: ItemListInterface[] } = dataListPage;
+
     return (
         <article className="flex flex-col gap-4 w-[90%] mx-auto">
             <div className="flex flex-col  gap-2">
