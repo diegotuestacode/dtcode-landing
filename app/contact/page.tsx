@@ -16,9 +16,6 @@ export default async function Contact() {
   const { data: dataContentHero1 } = dataContentHero;
 
   const { data: dataPage1 } = dataPage;
-
-  const { STRAPI_HOST } = process.env;
-
   
 
   return (

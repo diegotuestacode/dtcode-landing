@@ -9,7 +9,7 @@ interface CardServiceI {
    host:string;
 }
 
-const CardServices = ({data, host}:CardServiceI) => {
+const CardServices = ({data}:CardServiceI) => {
 
     const IMG_DESARROLLO = '/assets/images/settins-icon.png'
     const IMG_DISENO = '/assets/images/diseno-icon.png'
