@@ -24,11 +24,10 @@ export default async function RootLayout({
 }>) {
 
   const {data: dataGlobal} = await getDataGlobal() ?? [];
-  const {logo, bussiness, description} = dataGlobal[0] ?? {};
+  const {bussiness, description} = dataGlobal[0] ?? {};
   const {data} = await getMenu() ?? [];
-
-  const {STRAPI_HOST} = process.env; 
-  const NEW_LOGO = `${STRAPI_HOST}${logo?.url}`
+  
+  const NEW_LOGO = '/assets/images/Logo-png.png'
   
   return (
     <html lang="es">

@@ -24,7 +24,7 @@ export default async function Contact() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <main className="w-full h-full">
-        <HeroHeader data={dataContentHero1[0]} host={STRAPI_HOST || ""} />
+        <HeroHeader data={dataContentHero1[0]} host={"/assets/images/fondo-contacto.jpg"} />
         <div className="pt-16 pb-20 container flex flex-col  gap-5 items-center mx-auto">
           <h2 className="text-colorPrimary text-[2rem] leading-none font-medium">
             {dataPage1[0]?.title1}

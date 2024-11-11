@@ -15,15 +15,12 @@ export default async function Services() {
 
   const { data: dataCategories1 }: { data: CardServiceInterface[] } =
     dataCategories;
-
-    console.log("categories: ", dataCategories1)
-
   const { STRAPI_HOST } = process.env;
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <main className="w-full h-full">
-        <HeroHeader data={dataContentHero1[0]} host={STRAPI_HOST ?? ""} />
+        <HeroHeader data={dataContentHero1[0]} host={"/assets/images/fondo2-servicios.jpg"} />
         <div className=" container py-12 mx-auto flex flex-col gap-10">
           {dataCategories1.map((category, index) => (
             <CardContentServices

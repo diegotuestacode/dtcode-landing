@@ -11,11 +11,20 @@ interface CardServiceI {
 
 const CardServices = ({data, host}:CardServiceI) => {
 
+    const IMG_DESARROLLO = '/assets/images/settins-icon.png'
+    const IMG_DISENO = '/assets/images/diseno-icon.png'
+    const IMG_LICENCIAS = '/assets/images/licencia-icon.png'
+
+    const nameService = data?.name.toLowerCase();
+    const IMG_OFICIAL =  nameService.includes("desarrollo")  ? IMG_DESARROLLO : 
+                            nameService.includes("dise") ? IMG_DISENO : 
+                            nameService.includes("licencia") ? IMG_LICENCIAS : ''
+
     return (
         <article className="max-w-[400px] min-h-[340px] p-[3%] rounded-[20px] shadow-[1px_1px_20px_rgba(135,127,127,0.25)]  flex flex-col gap-2 items-center">
             <div className="flex flex-col gap-3 items-center">
                 <div className="bg-colorPrimary w-[80px] h-[80px] rounded-full flex items-center justify-center">
-                    <i> <img src={host+data.icon.url} width={45} alt={`logo de servicio de ${data.name}`} /></i>
+                    <i> <img src={IMG_OFICIAL} width={45} alt={`logo de servicio de ${data.name}`} /></i>
                 </div>
                 <h3 className="text-colorPrimary text-center font-medium text-[25px]">{data.name}</h3>
             </div>

@@ -13,7 +13,7 @@ interface HeroInterface{
 const HeroHeader = ({data, host}: HeroInterface) =>{
 
 
-    const NEW_IMG = `${host}${data?.image.url}`
+    const NEW_IMG = host
 
    
 

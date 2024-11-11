@@ -38,7 +38,7 @@ export default async function Home() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <main className="w-full h-full">
-        <HeroHeader data={dataContentHero1[0]} host={STRAPI_HOST ?? ""} />
+        <HeroHeader data={dataContentHero1[0]} host={"/assets/images/fondo-hero-image.jpg"} />
         <div className="pt-10 pb-20 container mx-auto px-4 flex flex-wrap gap-10 justify-center md:px-0 ">
           {dataCategories1?.map((category) => (
             <CardServices
